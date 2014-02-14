@@ -4,11 +4,14 @@ class Gitlab
 
     commit_string = params[:total_commits_count] > 1 ? "commits" : "commit"
 
-    fields = params[:commits].map do |commit|
+    attachments = params[:commits].map do |commit|
       {
-          title: "#{commit[:message]}",
-          value: "<#{commit[:url]}|#{commit[:id]}>",
-          short: false
+        color: "good",
+        fields: [{
+            title: "#{commit[:message]}",
+            value: "<#{commit[:url]}|#{commit[:id][0..9]}>",
+            short: false
+        }]
       }
     end
 
@@ -24,11 +27,7 @@ class Gitlab
       channel: channel,
       username: "#{params[:botname]}",
       text: "#{params[:user_name]} pushes #{params[:total_commits_count]} #{commit_string} to <#{branch_url}|#{branch}> on <#{params[:repository][:homepage]}|#{params[:repository][:name]}>",
-      attachments: [{
-          color: "#36a64f",
-          fields: fields
-        }
-      ]
+      attachments: attachments
     }
     opts = {:body => payload.to_json}
     HTTParty.post(url, opts)
