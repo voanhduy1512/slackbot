@@ -30,8 +30,6 @@ class Gitlab
 
         fallback: "Required text summary of the attachment that is shown by clients that understand attachments but choose not to show them.",
 
-        pretext: "Commit",
-
         color: "#36a64f",
 
         fields: fields
