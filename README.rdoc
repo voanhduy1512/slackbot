@@ -1,13 +1,17 @@
-== README
+# README
 
-Post to a private room
+## Create Webhook in Gitlab
 
-http://slackbot.anhduy.io/callback/gitlab?room=ruby&botname=bot
+First go to your gitlab project setting page -> Web Hooks
 
-Post to a private room
+Input the url like:
 
-http://slackbot.anhduy.io/callback/gitlab?room=general&botname=bot&is_channel=true
+`http://slackbot.anhduy.io/callback/gitlab?room=:room&botname=:botname&is_channel=:is_channel&is_person=:is_person`
 
-Post to a person
+### Options explain
 
-http://slackbot.anhduy.io/callback/gitlab?room=general&botname=bot&is_person=true
+
+* `room` --  channel, person, private room ... name without @ or #
+* `botname` -- this is your bot name, call it whatever you want
+* `is_channel` -- *optional*, if `room` is a channel, make it true; otherwise, don't pass it in url
+* `is_person` -- *optional*, if `room` is a person, make it true; otherwise, don't pass it in url
