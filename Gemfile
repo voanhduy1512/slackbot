@@ -25,6 +25,11 @@ gem 'jquery-rails'
 
 gem 'puma'
 
+group :development do
+  gem 'binding_of_caller'
+  gem 'pry-rails'
+end
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
