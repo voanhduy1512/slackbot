@@ -1,0 +1,13 @@
+== README
+
+Post to a private room
+
+http://slackbot.anhduy.io/callback/gitlab?room=ruby&botname=bot
+
+Post to a private room
+
+http://slackbot.anhduy.io/callback/gitlab?room=general&botname=bot&is_channel=true
+
+Post to a person
+
+http://slackbot.anhduy.io/callback/gitlab?room=general&botname=bot&is_person=true
