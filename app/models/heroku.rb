@@ -12,6 +12,12 @@ class Heroku
         }]
       }
     end
+    channel = "#{params[:room]}"
+    if params[:is_channel]
+      channel = "\##{channel}"
+    elsif params[:is_person]
+      channel = "@#{channel}"
+    end
     payload = {
       channel: channel,
       username: "#{params[:botname]}",
