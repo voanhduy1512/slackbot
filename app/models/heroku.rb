@@ -21,7 +21,7 @@ class Heroku
     payload = {
       channel: channel,
       username: "#{params[:botname]}",
-      text: "#{params[:user]} deployed version #{params[:head]} of <#{params[:url]}|#{params[:app]}>",
+      text: "#{params[:user]} deployed version #{params[:release]} of <#{params[:url]}|#{params[:app]}>",
       attachments: attachments
     }
     opts = {:body => payload.to_json}
