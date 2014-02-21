@@ -1,4 +1,4 @@
-class Heroku
+class Custom
   def self.exec params
     url = Slackbot::SLACK_HOOK
 
