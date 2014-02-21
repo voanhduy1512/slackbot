@@ -8,4 +8,9 @@ class CallbackController < ApplicationController
     Heroku.exec params
     render text: 'success'
   end
+
+  def custom
+    Custom.exec params
+    render text: 'success'
+  end
 end
