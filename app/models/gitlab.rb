@@ -25,7 +25,6 @@ class Gitlab
     branch_url = "#{params[:repository][:homepage]}/commits/#{branch}"
     payload = {
       channel: channel,
-      username: "#{params[:botname]}",
       text: "#{params[:user_name]} pushes #{params[:total_commits_count]} #{commit_string} to <#{branch_url}|#{branch}> on <#{params[:repository][:homepage]}|#{params[:repository][:name]}>",
       attachments: attachments
     }

@@ -20,7 +20,6 @@ class Heroku
     end
     payload = {
       channel: channel,
-      username: "#{params[:botname]}",
       text: "#{params[:user]} deployed version #{params[:release]} of <#{params[:url]}|#{params[:app]}>",
       attachments: attachments
     }

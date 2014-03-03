@@ -10,7 +10,6 @@ class Custom
     end
     payload = {
       channel: channel,
-      username: "#{params[:botname]}",
       text: "#{params[:text]}"
     }
     opts = {:body => payload.to_json}
