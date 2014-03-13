@@ -104,6 +104,12 @@ bind 'unix:///home/anhduy/slackbot/tmp/sockets/puma.sock'
 #
 # workers 2
 
+on_worker_boot do
+  require 'newrelic_rpm'
+  NewRelic::Agent.manual_start({'rum.enabled' => true})
+  NewRelic::Agent.after_fork(:force_reconnect => true)
+end
+
 # Code to run when a worker boots to setup the process before booting
 # the app.
 #
