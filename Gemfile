@@ -30,6 +30,10 @@ group :development do
   gem 'pry-rails'
 end
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
