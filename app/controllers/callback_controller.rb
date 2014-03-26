@@ -9,6 +9,11 @@ class CallbackController < ApplicationController
     render text: 'success'
   end
 
+  def logentries
+    Logentries.exec params
+    render text: 'success'
+  end
+
   def custom
     Custom.exec params
     render text: 'success'
