@@ -11,12 +11,7 @@ class Logentries
         }]
       }
     ]
-    channel = "#{params[:room]}"
-    if params[:is_channel]
-      channel = "\##{channel}"
-    elsif params[:is_person]
-      channel = "@#{channel}"
-    end
+    channel = "cems-discussion"
     payload = {
       channel: channel,
       text: "#{params[:alert][:name]}",
