@@ -11,7 +11,9 @@ class Logentries
         }]
       }
     ]
+
     channel = "cems-discussion"
+
     payload = {
       channel: channel,
       text: "#{params[:payload][:alert][:name]}",
