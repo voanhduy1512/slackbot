@@ -6,7 +6,7 @@ class Logentries
       {
         color: "#29264d",
         fields: [{
-            title: "#{params[:event][:m]}",
+            title: "#{params[:payload][:event][:m]}",
             short: false
         }]
       }
@@ -14,7 +14,7 @@ class Logentries
     channel = "cems-discussion"
     payload = {
       channel: channel,
-      text: "#{params[:alert][:name]}",
+      text: "#{params[:payload][:alert][:name]}",
       attachments: attachments
     }
     opts = {:body => payload.to_json}
