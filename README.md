@@ -36,10 +36,10 @@ heroku addons:add deployhooks:http --url=[:url]
 
 Post heroku deploy to channel
 ```bash
-heroku addons:add deployhooks:http --url=http://slackbot.anhduy.io/callback/heroku?room=saigon&botname=gitlab&is_channel=true
+heroku addons:add deployhooks:http --url=http://slackbot.anhduy.io/callback/heroku?room=saigon&is_channel=true
 ```
 
 Post heroku deploy to private group
 ```bash
-heroku addons:add deployhooks:http --url=http://slackbot.anhduy.io/callback/heroku?room=taxisg&botname=gitlab
+heroku addons:add deployhooks:http --url=http://slackbot.anhduy.io/callback/heroku?room=taxisg
 ```
