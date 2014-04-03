@@ -21,9 +21,9 @@ Input the url like above guide
 
 ##### Example:
 
-`http://slackbot.anhduy.io/callback/gitlab?room=saigon&botname=gitlab&is_channel=:is_channel` => gitlab commit will post to channel `saigon`
+`http://slackbot.anhduy.io/callback/gitlab?room=saigon&is_channel=:is_channel` => gitlab commit will post to channel `saigon`
 
-`http://slackbot.anhduy.io/callback/gitlab?room=taxisg&botname=gitlab` => gitlab commit will post to private group `taxisg`
+`http://slackbot.anhduy.io/callback/gitlab?room=taxisg` => gitlab commit will post to private group `taxisg`
 
 
 ## Heroku
