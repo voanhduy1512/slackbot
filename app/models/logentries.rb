@@ -12,7 +12,16 @@ class Logentries
       }
     ]
 
-    channel = "cems-discussion"
+    channel = "#{params[:room]}"
+    if params[:is_channel]
+      channel = "\##{channel}"
+    elsif params[:is_person]
+      channel = "@#{channel}"
+    end
+
+    if channel == nil
+      channel = "cems-discussion"
+    end
 
     payload = {
       channel: channel,
