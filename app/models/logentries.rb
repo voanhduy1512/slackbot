@@ -1,12 +1,12 @@
 class Logentries
   def self.exec params
     url = Slackbot::SLACK_HOOK
-
+    raw_payload = JSON.parse(params[:payload]).with_indifferent_access
     attachments = [
       {
         color: "#29264d",
         fields: [{
-            title: "#{params[:payload][:event][:m]}",
+            title: "#{raw_payload[:event][:m]}",
             short: false
         }]
       }
@@ -16,7 +16,7 @@ class Logentries
 
     payload = {
       channel: channel,
-      text: "#{params[:payload][:alert][:name]}",
+      text: "#{raw_payload[:alert][:name]}",
       attachments: attachments
     }
     opts = {:body => payload.to_json}
