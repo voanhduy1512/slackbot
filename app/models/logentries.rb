@@ -19,7 +19,7 @@ class Logentries
       channel = "@#{channel}"
     end
 
-    if channel == nil
+    if channel.blank?
       channel = "cems-discussion"
     end
 
