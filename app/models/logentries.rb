@@ -20,7 +20,7 @@ class Logentries
     end
 
     if channel.blank?
-      channel = "cems-discussion"
+      channel = "cems-notification"
     end
 
     payload = {
