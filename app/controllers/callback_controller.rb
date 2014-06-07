@@ -1,4 +1,14 @@
 class CallbackController < ApplicationController
+  def index
+    service = Service.find_by(:title => params[:service])
+    result = 'Something went wrong'
+    if service && service.run(params)
+      result = 'success'
+    end
+
+    render text: result
+  end
+
   def gitlab
     Gitlab.exec params
     render text: 'success'

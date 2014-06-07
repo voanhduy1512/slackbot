@@ -1,8 +1,12 @@
 Slackbot::Application.routes.draw do
+  resources :services
+
+
   post "callback/gitlab"
   post "callback/heroku"
   post "callback/custom"
   post "callback/logentries"
+  post 'callback/:service', to: 'callback#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
