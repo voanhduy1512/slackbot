@@ -1,7 +1,10 @@
 class Service < ActiveRecord::Base
+
+  before_save :generate_slug
+
   def run params
     save_sample_params params unless have_sample_params?
-    run_code
+    Runner.new(self, params).run
   end
 
   def have_sample_params?
@@ -14,13 +17,7 @@ class Service < ActiveRecord::Base
   end
 
   private
-  def run_code
-    result = true
-    begin
-      eval(code)
-    rescue => e
-      result = false
-    end
-    result
+  def generate_slug
+    self.slug = title.underscore
   end
 end

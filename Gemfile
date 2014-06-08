@@ -12,6 +12,7 @@ end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 
 gem 'httparty'
 
@@ -30,11 +31,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem 'puma'
+gem 'simple_form'
+gem 'ace-rails-ap'
 
 group :development do
   gem 'sqlite3'
   gem 'binding_of_caller'
   gem 'pry-rails'
+  gem 'quiet_assets'
 end
 
 group :production do

@@ -2,6 +2,7 @@ class CreateServices < ActiveRecord::Migration
   def change
     create_table :services do |t|
       t.string :title
+      t.string :slug
       t.text :code
       t.text :sample_params
 

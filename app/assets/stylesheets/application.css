@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+.editor {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+}

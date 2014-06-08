@@ -1,12 +1,11 @@
 p#notice = notice
 
-p
-  strong Title:
-  = @service.title
-p
-  strong Code:
-  = @service.code
+h3= @service.title
 
-= link_to 'Edit', edit_service_path(@service)
-'|
-= link_to 'Back', services_path
+.row
+  .col-lg-6
+    #code-editor.editor
+      = @service.code
+  .col-lg-6
+    #params-editor.editor
+      = @service.sample_params
