@@ -4,7 +4,11 @@ class Service < ActiveRecord::Base
 
   def run params
     save_sample_params params
-    Runner.new(self, params).run
+    begin
+      Runner.new(self, params).run
+    rescue => e
+
+    end
   end
 
   def have_sample_params?
