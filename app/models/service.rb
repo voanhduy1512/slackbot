@@ -3,7 +3,7 @@ class Service < ActiveRecord::Base
   before_save :generate_slug
 
   def run params
-    save_sample_params params unless have_sample_params?
+    save_sample_params params
     Runner.new(self, params).run
   end
 
