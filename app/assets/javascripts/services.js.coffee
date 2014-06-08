@@ -2,13 +2,20 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "page:load ready", ->
-  editor = ace.edit("code-editor")
-  if editor
-    editor.setTheme("ace/theme/github")
-    editor.getSession().setMode('ace/mode/ruby')
+  if ($('.editor').length > 0)
+    textEditor = ace.edit("text-editor")
+    textEditor.setTheme("ace/theme/github")
+    textEditor.getSession().setMode('ace/mode/ruby')
 
-  params_editor = ace.edit("params-editor")
-  if params_editor
+    attachmentsEditor = ace.edit("attachments-editor")
+    attachmentsEditor.setTheme("ace/theme/github")
+    attachmentsEditor.getSession().setMode('ace/mode/ruby')
+
+    helpersEditor = ace.edit("helpers-editor")
+    helpersEditor.setTheme("ace/theme/github")
+    helpersEditor.getSession().setMode('ace/mode/ruby')
+
+    params_editor = ace.edit("params-editor")
     params_editor.setTheme("ace/theme/github")
     params_editor.getSession().setMode('ace/mode/json')
     params_editor.setReadOnly(true)

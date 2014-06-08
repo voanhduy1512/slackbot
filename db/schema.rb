@@ -16,7 +16,9 @@ ActiveRecord::Schema.define(version: 20140608034639) do
   create_table "services", force: true do |t|
     t.string   "title"
     t.string   "slug"
-    t.text     "code"
+    t.text     "text"
+    t.text     "attachments"
+    t.text     "helper_methods"
     t.text     "sample_params"
     t.datetime "created_at"
     t.datetime "updated_at"

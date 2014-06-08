@@ -1,11 +1,9 @@
 h1 Listing services
 
-table
+table.table
   thead
     tr
       th Title
-      th Code
-      th Sample params
       th
       th
       th
@@ -14,8 +12,6 @@ table
     - @services.each do |service|
       tr
         td = service.title
-        td = service.code
-        td = service.sample_params
         td = link_to 'Show', service
         td = link_to 'Edit', edit_service_path(service)
         td = link_to 'Destroy', service, data: {:confirm => 'Are you sure?'}, :method => :delete

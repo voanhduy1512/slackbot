@@ -3,6 +3,25 @@
 
   .form-inputs
     = f.input :title
+  - if @service.persisted?
+    .col-lg-6
+      .row
+        label Text
+        #text-editor.editor
+          = @service.text
+      .row
+        label Attachments
+        #attachments-editor.editor
+          = @service.attachments
+      .row
+        label Helper Methods
+        #helpers-editor.editor
+          = @service.helper_methods
+    .col-lg-6
+      .row
+        label Sample params
+        #params-editor.editor
+          = @service.sample_params
 
   .form-actions
     = f.button :submit, class: 'btn btn-primary pull-right'
