@@ -19,4 +19,8 @@ $(document).on "page:load ready", ->
     params_editor.setTheme("ace/theme/github")
     params_editor.getSession().setMode('ace/mode/json')
     params_editor.setReadOnly(true)
+
+    params = params_editor.getSession().getValue();
+    sample_params = JSON.stringify(JSON.parse(params),null,2);
+    params_editor.getSession().setValue(sample_params);
   return

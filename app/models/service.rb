@@ -12,7 +12,7 @@ class Service < ActiveRecord::Base
   end
 
   def save_sample_params params
-    self.sample_params = params.to_s
+    self.sample_params = params.to_json
     save
   end
 
