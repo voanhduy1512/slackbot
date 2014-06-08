@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require ace/ace
 //= require ace/theme-github
+//= require ace/worker-json
 //= require ace/mode-ruby
 //= require ace/mode-json
 //= require_tree .

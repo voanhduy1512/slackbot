@@ -14,13 +14,4 @@ $(document).on "page:load ready", ->
     helpersEditor = ace.edit("helpers-editor")
     helpersEditor.setTheme("ace/theme/github")
     helpersEditor.getSession().setMode('ace/mode/ruby')
-
-    params_editor = ace.edit("params-editor")
-    params_editor.setTheme("ace/theme/github")
-    params_editor.getSession().setMode('ace/mode/json')
-    params_editor.setReadOnly(true)
-
-    params = params_editor.getSession().getValue();
-    sample_params = JSON.stringify(JSON.parse(params),null,2);
-    params_editor.getSession().setValue(sample_params);
   return
