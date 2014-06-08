@@ -2,16 +2,26 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "page:load ready", ->
-  if ($('.editor').length > 0)
-    textEditor = ace.edit("text-editor")
-    textEditor.setTheme("ace/theme/github")
-    textEditor.getSession().setMode('ace/mode/ruby')
+  $("textarea[data-editor]").each ->
+    textarea = $(this)
+    mode = textarea.data("editor")
+    editDiv = $("<div>",
+      position: "absolute"
+      class: textarea.attr("class")
+    ).insertBefore(textarea)
+    textarea.css "visibility", "hidden"
 
-    attachmentsEditor = ace.edit("attachments-editor")
-    attachmentsEditor.setTheme("ace/theme/github")
-    attachmentsEditor.getSession().setMode('ace/mode/ruby')
+    editor = ace.edit(editDiv[0])
+    editor.getSession().setValue textarea.val()
+    editor.getSession().setMode "ace/mode/" + mode
+    context = $(this).data('context')
+    if context && mode == 'json'
+      editor.getSession().setValue(JSON.stringify(context,null,2))
+    editor.setTheme("ace/theme/github");
 
-    helpersEditor = ace.edit("helpers-editor")
-    helpersEditor.setTheme("ace/theme/github")
-    helpersEditor.getSession().setMode('ace/mode/ruby')
+    # copy back to textarea on form submit...
+    textarea.closest("form").submit ->
+      textarea.val editor.getSession().getValue()
+      return
+    return
   return

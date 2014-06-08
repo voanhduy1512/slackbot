@@ -42,7 +42,8 @@ class ServicesController < ApplicationController
   def update
     respond_to do |format|
       if @service.update(service_params)
-        format.html { redirect_to @service, notice: 'Service was successfully updated.' }
+        @service.test
+        format.html { redirect_to edit_service_path(@service), notice: 'Service was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +70,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:title, :code, :sample_params)
+      params.require(:service).permit(:title, :text, :attachments, :helper_methods, :sample_params)
     end
 end

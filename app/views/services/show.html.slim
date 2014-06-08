@@ -23,13 +23,3 @@ h3= @service.title
     .row
       label Sample params
       #params-editor.editor data-params=@service.sample_params
-
-coffee:
-  $(document).on 'ready page:load', ->
-    params_editor = ace.edit("params-editor")
-    params_editor.setTheme("ace/theme/github")
-    params_editor.getSession().setMode('ace/mode/json')
-    params_editor.setReadOnly(true)
-    params = $('#params-editor').data('params')
-    sample_params = JSON.stringify(params,null,2)
-    params_editor.getSession().setValue(sample_params)

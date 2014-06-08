@@ -16,6 +16,10 @@ class Service < ActiveRecord::Base
     save
   end
 
+  def test
+    run JSON.parse(sample_params, {:symbolize_names => true}) if have_sample_params?
+  end
+
   private
   def generate_slug
     self.slug = title.underscore

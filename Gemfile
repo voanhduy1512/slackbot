@@ -36,6 +36,7 @@ gem 'ace-rails-ap'
 
 group :development do
   gem 'sqlite3'
+  gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'quiet_assets'

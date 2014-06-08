@@ -5,23 +5,18 @@
     = f.input :title
   - if @service.persisted?
     .col-lg-6
-      .row
-        label Text
-        #text-editor.editor
-          = @service.text
-      .row
-        label Attachments
-        #attachments-editor.editor
-          = @service.attachments
-      .row
-        label Helper Methods
-        #helpers-editor.editor
-          = @service.helper_methods
+      label Text
+      = f.input :text, input_html: {class: 'editor', data: {editor: 'ruby'}}, wrapper: :nowrapper
+
+      label Attachments
+      = f.input :attachments, input_html: {class: 'editor', data: {editor: 'ruby'}}, wrapper: :nowrapper
+
+      label Helper
+      = f.input :helper_methods, input_html: {class: 'editor', data: {editor: 'ruby'}}, wrapper: :nowrapper
+
     .col-lg-6
-      .row
-        label Sample params
-        #params-editor.editor
-          = @service.sample_params
+      label Sample Params
+      = f.input :sample_params, input_html: {class: 'editor', data: {context: @service.sample_params, editor: 'json'}}, wrapper: :nowrapper
 
   .form-actions
-    = f.button :submit, class: 'btn btn-primary pull-right'
+    = f.button :submit, value: 'Test', class: 'btn btn-primary pull-right'

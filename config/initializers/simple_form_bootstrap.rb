@@ -118,5 +118,5 @@ SimpleForm.setup do |config|
   # to learn about the different styles for forms and inputs,
   # buttons and other elements.
   config.default_wrapper = :bootstrap3
-  config.label_class = 'col-xs-12 col-sm-2 col-md-2 control-label no-padding-right'
+  # config.label_class = 'col-xs-12 col-sm-2 col-md-2 control-label no-padding-right'
 end
