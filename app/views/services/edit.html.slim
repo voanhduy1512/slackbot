@@ -1,8 +1,23 @@
-h1 Editing service
+.row
+  .pull-right
+    =link_to 'Back', services_path, class: 'btn btn-default'
+.row
+  h1= "Editing #{@service.title}"
 
-== render 'form'
+  p Use this callback link to use in your callback server
+  .row
+    label Room
+    input#room
+  .row
+    button.btn.btn-primary#submit Generate link
 
-= link_to 'Show', @service
-'|
-= link_to 'Back', services_path
+  h3#call_back_url.danger
 
+  - if @service.have_sample_params?
+    == render 'form'
+
+  javascript:
+    $('#submit').click(function(){
+      var link = "#{service_url(@service)}" + "?room=" + $('#room').val();
+      $('#call_back_url').text(link);
+    });

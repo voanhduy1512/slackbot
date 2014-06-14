@@ -6,17 +6,17 @@
   - if @service.persisted?
     .col-lg-6
       label Text
-      = f.input :text, input_html: {class: 'editor', data: {editor: 'ruby'}}, wrapper: :nowrapper
+      = f.input :text, input_html: {class: 'tl-editor', data: {editor: 'ruby'}}, wrapper: :nowrapper
 
       label Attachments
-      = f.input :attachments, input_html: {class: 'editor', data: {editor: 'ruby'}}, wrapper: :nowrapper
+      = f.input :attachments, input_html: {class: 'tl-editor', data: {editor: 'ruby'}}, wrapper: :nowrapper
 
       label Helper
-      = f.input :helper_methods, input_html: {class: 'editor', data: {editor: 'ruby'}}, wrapper: :nowrapper
+      = f.input :helper_methods, input_html: {class: 'helper-editor', data: {editor: 'ruby'}}, wrapper: :nowrapper
 
     .col-lg-6
       label Sample Params
-      = f.input :sample_params, input_html: {class: 'editor', data: {context: @service.sample_params, editor: 'json'}}, wrapper: :nowrapper
+      = f.input :sample_params, input_html: {class: 'params-editor', data: {context: @service.sample_params, editor: 'json'}}, wrapper: :nowrapper
 
   .form-actions
-    = f.button :submit, value: 'Test', class: 'btn btn-primary pull-right'
+    = f.button :submit, value: "#{@service.persisted? ? 'Test' : 'Create'}", class: 'btn btn-primary pull-right'

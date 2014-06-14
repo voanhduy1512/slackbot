@@ -12,7 +12,20 @@
  *= require_tree .
  */
 
-.editor {
+.tl-editor {
+  position: absolute;
+  width: 100% !important;
+  height: 200px !important;
+}
+
+.params-editor{
+  margin-left: 10px;
+  position: absolute;
+  width: 100% !important;
+  height: 500px !important;
+}
+
+.helper-editor{
   position: absolute;
   width: 100% !important;
   height: 500px !important;
