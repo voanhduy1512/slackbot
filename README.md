@@ -3,6 +3,8 @@
 
 Slackbot callback url
 
+[ ![Codeship Status for voanhduy1512/slackbot](https://www.codeship.io/projects/2b7161c0-ee67-0131-798f-128c297ad841/status)](https://www.codeship.io/projects/26841)
+
 `http://slackbot.anhduy.io/callback/[:service]?room=:room&botname=:botname&is_channel=:is_channel&is_person=:is_person`
 
 ### Options explain
